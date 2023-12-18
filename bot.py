@@ -10,7 +10,7 @@ keyboard = types.InlineKeyboardMarkup(row_width=2)
 BPMN_button = types.InlineKeyboardButton('Диаграмма BPMN', callback_data='bpmn')
 dashboard_button = types.InlineKeyboardButton('Дашборд', callback_data='dashboard')
 help_button = types.InlineKeyboardButton('Помощь', callback_data='help')
-order_button = types.InlineKeyboardButton('Оформить заказ', callback_data='order')
+order_button = types.InlineKeyboardButton('Начать инвестировать', callback_data='order')
 keyboard.add(BPMN_button, help_button, dashboard_button, order_button)
 
 @bot.message_handler(commands=['start'])
@@ -145,16 +145,16 @@ def callback_handler(call):
         bpmn_function_markup = types.InlineKeyboardMarkup(row_width=1)
 
         button11 = types.InlineKeyboardButton('Как телеграм бот может помочь в процессе '
-                                              'обработки заказов для транспортной компании', callback_data='bpmn_function3')
+                                              'обработки инвестиций', callback_data='bpmn_function3')
 
         bpmn_function_markup.add(button11)
         bot.send_message(call.message.chat.id, 'Выберите действие:', reply_markup=bpmn_function_markup)
 
     elif call.data == 'bpmn_function3':
-        bot.send_message(call.message.chat.id, 'Телеграм-бот может значительно упростить и ускорить процесс обработки заказов для транспортной компании. '
+        bot.send_message(call.message.chat.id, 'Телеграм-бот может значительно упростить и ускорить процесс обработки инвестиций. '
                                                'Вот несколько способов, как он может быть полезен:'
                                                'Получение заказов: Клиенты могут отправлять заказы через бота, '
-                                               'указывая необходимую информацию, такую как место погрузки, место назначения, тип груза и другие детали.'
+                                               'Управление бюджетом: пользователь должен иметь возможность корректировать бюджет.'
                                                'Интеграция с платежными системами: Для удобства клиентов бот может интегрироваться с '
                                                'платежными системами, позволяя им оплачивать услуги напрямую через телеграм.'
                                                'Обратная связь и поддержка: Клиенты могут общаться с ботом для задания вопросов, '
@@ -168,8 +168,8 @@ def callback_handler(call):
         dashboard_markup.add(button1, button2)
         bot.send_message(call.message.chat.id, 'Выберите действие:', reply_markup=dashboard_markup)
     elif call.data == 'dashboard_function1':
-        bot.send_message(call.message.chat.id, 'Дашборд предназначен для визуализации и анализа данных о здоровье и медицинских показателях. '
-                                               'Содержит пять ключевых графиков, предоставляющих информацию о различных аспектах пациентского здоровья.')
+        bot.send_message(call.message.chat.id, 'Дашборд предназначен для визуализации и анализа данных об инвестициях. '
+                                               'Содержит пять ключевых графиков, предоставляющих информацию о различных аспектах рынка')
 
         dashboard_function_markup = types.InlineKeyboardMarkup(row_width=1)
 
